@@ -37,4 +37,5 @@ public class LoginSuccessPage
     {
     	return checkLoginField.getText();
     }
+    
 }

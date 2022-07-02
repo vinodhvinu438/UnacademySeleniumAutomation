@@ -51,5 +51,41 @@ public class Login extends Base
     	Thread.sleep(35000);
         loginSuccessPage = homePage.clickOnVerifyOTPButton();
     }
+    
+    @Then("^Enter registered \"([^\"]*)\" email$")
+    public void enter_registered_something_email(String email) throws InterruptedException {
+       Thread.sleep(2000);
+       homePage.enterEmail(email);
+    }
+    @And("^Click on Continue with email$")
+    public void click_on_continue_with_email() throws InterruptedException {
+       Thread.sleep(2000);
+       homePage.continueWithEmail();
+    }
+    @When("^Enter wrong \"([^\"]*)\"  mobile number$")
+    public void enter_wrong_something_mobile_number(String mobilenumber) throws InterruptedException  {
+    	Thread.sleep(1000);
+       homePage.enterMobileNumber(mobilenumber);
+    }
+    @Then("^Verify warning message is displayed$")
+    public void verify_warning_message_is_displayed() throws InterruptedException{
+       Thread.sleep(2000);
+       Assert.assertTrue(homePage.warningMessageOfInvalidPhonenumber());
+       driver.quit();
+    }
+    @Then("^Enter wrong \"([^\"]*)\" email$")
+    public void enter_wrong_something_email(String email) throws InterruptedException  {
+      Thread.sleep(1000);
+      homePage.enterEmail(email);
+    }
+    @Then("^Verify warning message of email is displayed$")
+    public void verify_warning_message_of_email_is_displayed() throws InterruptedException  {
+        Thread.sleep(2000);
+        Assert.assertTrue(homePage.warningMessageOfInvalidEmail());
+        driver.quit();
+    }
+
+
+
 
 }
