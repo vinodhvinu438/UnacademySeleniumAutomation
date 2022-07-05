@@ -7,12 +7,12 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.*;
 import pageObjects.AccountSuccessPage;
-import pageObjects.HomePage;
+import pageObjects.LoginPage;
 import resources.Base;
 
 public class Register extends Base {
 	WebDriver driver;
-	HomePage homePage;
+	LoginPage homePage;
 	AccountSuccessPage accountSuccessPage;
 	@Given("^Enter url of unacademy application$")
     public void enter_url_of_unacademy_application() throws IOException {
@@ -22,7 +22,7 @@ public class Register extends Base {
 
     @Then("^click on login buuton on homepage$")
     public void click_on_login_buuton_on_homepage() {
-        homePage = new HomePage(driver);
+        homePage = new LoginPage(driver);
         homePage.clickOnLoginHomePage();
     }
 

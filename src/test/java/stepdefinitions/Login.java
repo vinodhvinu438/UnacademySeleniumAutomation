@@ -1,18 +1,24 @@
 package stepdefinitions;
 
 import java.io.IOException;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.en.*;
-import pageObjects.HomePage;
+import pageObjects.LoginPage;
 import pageObjects.LoginSuccessPage;
 import resources.Base;
 
 public class Login extends Base
 {
 	WebDriver driver;
-	HomePage homePage;
+	LoginPage homePage;
 	LoginSuccessPage loginSuccessPage;
 	@Given("^Open url of unacademy application$")
     public void open_url_of_unacademy_application() throws IOException {
@@ -22,7 +28,7 @@ public class Login extends Base
 
     @Then("^Click on login option on homepage$")
     public void click_on_login_option_on_homepage() {
-    	homePage = new HomePage(driver);
+    	homePage = new LoginPage(driver);
         homePage.clickOnLoginHomePage();
     }
 
@@ -42,13 +48,13 @@ public class Login extends Base
 
     @And("^Enter registered mobile number$")
     public void enter_registered_mobile_number() throws InterruptedException{
-    	Thread.sleep(2000);
-       homePage.enterMobileNumber(prop.getProperty("mobilenumber"));
+	Thread.sleep(2000);
+    homePage.enterMobileNumber(prop.getProperty("mobilenumber"));
     }
 
     @And("^click on veifyotp button option$")
     public void click_on_veifyotp_button_option() throws InterruptedException  {
-    	Thread.sleep(35000);
+    	Thread.sleep(25000);
         loginSuccessPage = homePage.clickOnVerifyOTPButton();
     }
     

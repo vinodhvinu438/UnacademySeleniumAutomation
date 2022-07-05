@@ -7,14 +7,14 @@ Background:
 Given Open url of unacademy application
 Then Click on login option on homepage
 
-@all
+@all @mobilenumber
 Scenario: Login with valid phone number
 And Enter registered mobile number
 Then click on login button
 And click on veifyotp button option
 Then  Verify user able to login successfully
  
-@all
+@all @email
 Scenario Outline: Login with valid email
 And Click on Continue with email
 Then Enter registered "<Email>" email

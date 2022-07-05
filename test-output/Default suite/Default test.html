@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Jul 02 17:11:26 IST 2022</td>
+<td>Started on:</td><td>Tue Jul 05 15:56:31 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>96 seconds (96250 ms)</td>
+<tr><td>Total time:</td><td>15 seconds (15965 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,9 +76,30 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runners.MyRunner.runScenario()'><b>runScenario</b><br>Test class: runners.MyRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Register with Mandatory fields", "Registering Account"</td>
-<td></td>
-<td>95</td>
+<td title='runners.MyRunner.runScenario()'><b>runScenario</b><br>Test class: runners.MyRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with valid phone number", "UnacademyLogin Application"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder=\&quot;Enter your mobile number\&quot;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.3.0&apos;, revision: &apos;a4995e2c09*&apos;
+System info: host: &apos;VINODHOSTING&apos;, ip: &apos;192.168.54.225&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\vinod\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58168}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58168/devtoo..., se:cdpVersion: 103.0.5060.66, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a7555ce06fdc5336c86d56d8cb873b49
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at stepdefinitions.Login.enter_registered_mobile_number(Login.java:52)
+	at ?.Enter registered mobile number(file:///C:/Users/vinod/OneDrive/Desktop/UnacademySeleniumAutomation/src/test/java/features/login.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace874548138", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace874548138'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@placeholder=\&quot;Enter your mobile number\&quot;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.3.0&apos;, revision: &apos;a4995e2c09*&apos;
+System info: host: &apos;VINODHOSTING&apos;, ip: &apos;192.168.54.225&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\vinod\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58168}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58168/devtoo..., se:cdpVersion: 103.0.5060.66, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a7555ce06fdc5336c86d56d8cb873b49
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at stepdefinitions.Login.enter_registered_mobile_number(Login.java:52)
+	at ?.Enter registered mobile number(file:///C:/Users/vinod/OneDrive/Desktop/UnacademySeleniumAutomation/src/test/java/features/login.feature:12)
+</pre></div></td>
+<td>15</td>
 <td>runners.MyRunner@34e9fd99</td></tr>
 </table><p>
 </body>
