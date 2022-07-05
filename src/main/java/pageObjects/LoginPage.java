@@ -1,21 +1,16 @@
 package pageObjects;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage
 {
 	WebDriver driver;
 	public LoginPage(WebDriver driver)
 	{
-		this.driver = driver;
+		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	@FindBy(xpath="//button[normalize-space()=\"Login\"]")
@@ -38,9 +33,9 @@ public class LoginPage
 	}
 	@FindBy(xpath="//button[normalize-space()=\"Verify OTP\"]")
 	private WebElement verifyOtpField;
-	public LoginSuccessPage clickOnVerifyOTPButton() {
+	public HomePage clickOnVerifyOTPButton() {
 		verifyOtpField.click();
-		return new LoginSuccessPage(driver);
+		return new HomePage(driver);
 		
 	}
 	@FindBy(xpath="//a[@class=\" css-zfcs5g-StyledAnchor e2vughv1\"]")
@@ -109,11 +104,11 @@ public class LoginPage
 	}
 	@FindBy(xpath="//button[contains(.,\"Submit\")]")
 	private WebElement submitField;
-	public AccountSuccessPage clickOnSubmitButton() throws InterruptedException
+	public HomePage clickOnSubmitButton() throws InterruptedException
 	{
 		Thread.sleep(2000);
 		submitField.click();
-		return new AccountSuccessPage(driver);
+		return new HomePage(driver);
 		
 	}
 }

@@ -1,25 +1,19 @@
 package stepdefinitions;
 
 import java.io.IOException;
-import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.en.*;
 import pageObjects.LoginPage;
-import pageObjects.LoginSuccessPage;
+import pageObjects.HomePage;
 import resources.Base;
 
 public class Login extends Base
 {
 	WebDriver driver;
-	LoginPage homePage;
-	LoginSuccessPage loginSuccessPage;
+	LoginPage loginPage;
+	HomePage homePage;
 	@Given("^Open url of unacademy application$")
     public void open_url_of_unacademy_application() throws IOException {
        driver = initializeBrowser();
@@ -28,20 +22,20 @@ public class Login extends Base
 
     @Then("^Click on login option on homepage$")
     public void click_on_login_option_on_homepage() {
-    	homePage = new LoginPage(driver);
-        homePage.clickOnLoginHomePage();
+    	loginPage = new LoginPage(driver);
+    	loginPage.clickOnLoginHomePage();
     }
 
     @Then("^click on login button$")
     public void click_on_login_button() throws InterruptedException   {
     	Thread.sleep(2000);
-        homePage.clickOnLogin();
+    	loginPage.clickOnLogin();
     }
     @Then("Verify user able to login successfully")
     public void verify_user_able_to_login_successfully() throws InterruptedException {
     	Thread.sleep(5000);
-    	loginSuccessPage.clickOnDialog();;
-        Assert.assertEquals("Experience our 2021 recap", loginSuccessPage.checkLoginField());
+    	homePage.clickOnDialog();;
+        Assert.assertEquals("Experience our 2021 recap", homePage.checkLoginField());
         driver.quit();
     }
 
@@ -49,45 +43,45 @@ public class Login extends Base
     @And("^Enter registered mobile number$")
     public void enter_registered_mobile_number() throws InterruptedException{
 	Thread.sleep(2000);
-    homePage.enterMobileNumber(prop.getProperty("mobilenumber"));
+	loginPage.enterMobileNumber(prop.getProperty("mobilenumber"));
     }
 
     @And("^click on veifyotp button option$")
     public void click_on_veifyotp_button_option() throws InterruptedException  {
     	Thread.sleep(25000);
-        loginSuccessPage = homePage.clickOnVerifyOTPButton();
+    	homePage = loginPage.clickOnVerifyOTPButton();
     }
     
     @Then("^Enter registered \"([^\"]*)\" email$")
     public void enter_registered_something_email(String email) throws InterruptedException {
        Thread.sleep(2000);
-       homePage.enterEmail(email);
+       loginPage.enterEmail(email);
     }
     @And("^Click on Continue with email$")
     public void click_on_continue_with_email() throws InterruptedException {
        Thread.sleep(2000);
-       homePage.continueWithEmail();
+       loginPage.continueWithEmail();
     }
     @When("^Enter wrong \"([^\"]*)\"  mobile number$")
     public void enter_wrong_something_mobile_number(String mobilenumber) throws InterruptedException  {
     	Thread.sleep(1000);
-       homePage.enterMobileNumber(mobilenumber);
+    	loginPage.enterMobileNumber(mobilenumber);
     }
     @Then("^Verify warning message is displayed$")
     public void verify_warning_message_is_displayed() throws InterruptedException{
        Thread.sleep(2000);
-       Assert.assertTrue(homePage.warningMessageOfInvalidPhonenumber());
+       Assert.assertTrue(loginPage.warningMessageOfInvalidPhonenumber());
        driver.quit();
     }
     @Then("^Enter wrong \"([^\"]*)\" email$")
     public void enter_wrong_something_email(String email) throws InterruptedException  {
       Thread.sleep(1000);
-      homePage.enterEmail(email);
+      loginPage.enterEmail(email);
     }
     @Then("^Verify warning message of email is displayed$")
     public void verify_warning_message_of_email_is_displayed() throws InterruptedException  {
         Thread.sleep(2000);
-        Assert.assertTrue(homePage.warningMessageOfInvalidEmail());
+        Assert.assertTrue(loginPage.warningMessageOfInvalidEmail());
         driver.quit();
     }
 
