@@ -1,9 +1,14 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage
 {
@@ -23,6 +28,8 @@ public class LoginPage
 	private WebElement enterMobileNumberField;
 	public void enterMobileNumber(String number)
 	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//input[@placeholder=\\\"Enter your mobile number\\\"]")));
 		enterMobileNumberField.sendKeys(number);
 	}
 	@FindBy(xpath="(//button[@aria-label=\"Login\"])[2]")
@@ -42,42 +49,56 @@ public class LoginPage
 	private WebElement continueWithEmailField;
 	public void continueWithEmail()
 	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//a[@class=\\\" css-zfcs5g-StyledAnchor e2vughv1\\\"]")));
 		continueWithEmailField.click();
 	}
 	@FindBy(xpath="//input[@placeholder=\"Email address\"]")
 	private WebElement enterEmailField;
 	public void enterEmail(String email)
 	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//input[@placeholder=\\\"Email address\\\"]")));
 		enterEmailField.sendKeys(email);
 	}
 	@FindBy(xpath="//p[contains(.,\"Phone number is not valid\")]")
 	private WebElement invalidPhonenumberField;
-	public boolean warningMessageOfInvalidPhonenumber()
-	{
+	public boolean warningMessageOfInvalidPhonenumber() {
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//p[contains(.,\\\"Phone number is not valid\\\")]")));
+		
 		return invalidPhonenumberField.isDisplayed();
 	}
 	@FindBy(xpath="//p[contains(.,\"Email is not valid\")]")
 	private WebElement invalidEmailField;
 	public boolean warningMessageOfInvalidEmail()
 	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//p[contains(.,\\\"Email is not valid\\\")]")));
 		return invalidEmailField.isDisplayed();
 	}
 	@FindBy(xpath="//h6[contains(.,\"create your account\")]")
 	private WebElement createNewAccountField;
 	public void clickOnCreateNewAccount()
 	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//h6[contains(.,\\\"create your account\\\")]")));
 		createNewAccountField.click();
 	}
 	@FindBy(xpath="//button[normalize-space()=\"Continue\"]")
 	private WebElement clickOnContinueField;
 	public void clickOnContinue() throws InterruptedException
 	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//button[normalize-space()=\\\"Continue\\\"]")));
 		clickOnContinueField.click();
 	}
 	@FindBy(xpath="//input[@placeholder=\"Name\"]")
 	private WebElement nameField;
 	public void enterName(String name)
 	{
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//input[@placeholder=\\\"Name\\\"]")));
 	    nameField.sendKeys(name);
 	}
 	@FindBy(xpath="//input[@placeholder=\"Email address\"]")
@@ -93,7 +114,8 @@ public class LoginPage
 	public void selectState() throws InterruptedException
 	{
 		selectStateField.click();
-		Thread.sleep(1000);
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(2));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[normalize-space()=\\\"Andhra Pradesh\\\"]")));
 		andhraPradeshField.click();	
 	}
 	@FindBy(xpath="//input[@type=\"checkbox\"]")

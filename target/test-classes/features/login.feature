@@ -7,7 +7,7 @@ Background:
 Given Open url of unacademy application
 Then Click on login option on homepage
 
-@all @mobilenumber
+@all @login
 Scenario: Login with valid phone number
 And Enter registered mobile number
 Then click on login button
@@ -25,7 +25,7 @@ Examples:
 |Email                   |
 |vinodhvinu438@gmail.com |
 
-@wrongnumber @all
+@wrong @all
 Scenario Outline: Login With invalid phone number
 When Enter wrong "<mobile number>"  mobile number
 And click on login button
@@ -34,7 +34,7 @@ Examples:
 |mobile number |
 |0000000000    |
 
-@wrongemail @all
+@wrong @all
 Scenario Outline: Login with invalid Email
 And Click on Continue with email
 Then Enter wrong "<Email>" email

@@ -1,9 +1,14 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage
 {
@@ -23,12 +28,14 @@ public class HomePage
 	private WebElement acceptCookieField;
 	public void clickOnCookie()
 	{
-		return;
+		acceptCookieField.click();
 	}
     @FindBy(xpath="(//div[contains(.,\"OK GOT IT\")])[4]")
 	private WebElement acceptDialogField;
     public void clickOnDialog()
     {
+    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("(//div[contains(.,\\\"OK GOT IT\\\")])[4]")));
     	acceptDialogField.click();
     }
     @FindBy(xpath="//p[contains(.,'Experience our 2021 recap')]")

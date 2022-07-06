@@ -30,7 +30,6 @@ public class Register extends Base {
 
     @Then("^enter new mobile number to register$")
     public void enter_new_mobile_number_to_register() throws InterruptedException {
-       Thread.sleep(2000);
        loginPage.enterMobileNumber(prop.getProperty("newmobilenumber"));
     }
 
@@ -49,13 +48,11 @@ public class Register extends Base {
 
     @And("^click on create your account$")
     public void click_on_create_your_account() throws InterruptedException {
-       Thread.sleep(2000);
        loginPage.clickOnCreateNewAccount();
     }
 
     @And("^click on continue button to register$")
     public void click_on_continue_button_to_register() throws InterruptedException {
-       Thread.sleep(1000);
        loginPage.clickOnContinue();
     }
 
