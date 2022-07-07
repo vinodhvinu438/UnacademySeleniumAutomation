@@ -9,7 +9,7 @@ import pageObjects.LoginPage;
 import pageObjects.HomePage;
 import resources.Base;
 
-public class Login extends Base
+public class LoginTest extends Base
 {
 	WebDriver driver;
 	LoginPage loginPage;

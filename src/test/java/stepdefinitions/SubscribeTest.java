@@ -12,7 +12,7 @@ import pageObjects.LoginPage;
 import pageObjects.PaymentPage;
 import resources.Base;
 
-public class Subscribe extends Base {
+public class SubscribeTest extends Base {
 
 	    WebDriver driver;
         HomePage homePage;

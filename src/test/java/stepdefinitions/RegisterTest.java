@@ -12,7 +12,7 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import resources.Base;
 
-public class Register extends Base {
+public class RegisterTest extends Base {
 	WebDriver driver;
 	LoginPage loginPage;
 	HomePage homePage;
