@@ -18,7 +18,7 @@ public class LoginPage
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath="//button[normalize-space()=\"Login\"]")
+	@FindBy(xpath="//button[contains(.,'Login')]")
 	private WebElement loginButtonOnHomepage;
 	public void clickOnLoginHomePage()
 	{
@@ -38,7 +38,7 @@ public class LoginPage
 	{
 	       loginOnMobileNumberField.click();
 	}
-	@FindBy(xpath="//button[normalize-space()=\"Verify OTP\"]")
+	@FindBy(xpath="//button[contains(.,'Verify OTP')]")
 	private WebElement verifyOtpField;
 	public HomePage clickOnVerifyOTPButton() {
 		verifyOtpField.click();
@@ -85,7 +85,7 @@ public class LoginPage
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//h6[contains(.,\\\"create your account\\\")]")));
 		createNewAccountField.click();
 	}
-	@FindBy(xpath="//button[normalize-space()=\"Continue\"]")
+	@FindBy(xpath="//button[contains(.,'Continue']")
 	private WebElement clickOnContinueField;
 	public void clickOnContinue() throws InterruptedException
 	{

@@ -3,6 +3,7 @@ package pageObjects;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -68,6 +69,15 @@ public class HomePage
 	{
 		return textField.isDisplayed();
 	}
+	@FindBy(xpath="//button[@class=' eiav8li8 css-bbo95m-StyledButton-SubButton es6r9411']") WebElement getsub ;
+	public ChooseplanPage subscription() throws InterruptedException
+    {
+        clickOnDialog();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,250)", "");
+        getsub.click();
+        return new ChooseplanPage(driver);
+    }
 
     
 }
