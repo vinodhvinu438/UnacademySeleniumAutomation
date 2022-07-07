@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.time.Duration;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -78,6 +79,25 @@ public class HomePage
         getsub.click();
         return new ChooseplanPage(driver);
     }
+	@FindBy(xpath="//button[@aria-label='Accept']") WebElement cookieField;
+    public void clickOnCookie1()
+    {
+    cookieField.click();
+    }
+    @FindBy(xpath="//a[contains(.,'About us')]") WebElement aboutusField;
+    public AboutusPage clickOnAboutus()
+    {
+    aboutusField.click();
+    Set<String> drivers = driver.getWindowHandles();
+    for(String id:drivers)
+    {
+    String name = driver.switchTo().window(id).getTitle();
+    if(name.equals("About Us | Unacademy"))
+    {
+        return new AboutusPage(driver);
+     }
 
-    
+    }
+    return new AboutusPage(driver);
+    }    
 }
