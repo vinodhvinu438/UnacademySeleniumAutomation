@@ -100,4 +100,12 @@ public class HomePage
     }
     return new AboutusPage(driver);
     }    
+    @FindBy (xpath = "//button[@class='css-1qeb7bl-DropDownButton e1spojmd2']")WebElement goal;
+    @FindBy (xpath = "//p[text()='Add another goal']") WebElement addgoal;
+    public Choosegoalspage addgoal() throws InterruptedException {
+        goal.click();
+        Thread.sleep(1000);
+        addgoal.click();
+        return new Choosegoalspage(driver);
+    }
 }
