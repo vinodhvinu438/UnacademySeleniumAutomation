@@ -3,13 +3,8 @@ package stepdefinitions;
  
 
 import java.io.IOException;
-
- 
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
- 
 
 import io.cucumber.java.en.*;
 import pageObjects.AboutusPage;
@@ -24,7 +19,7 @@ public class AboutusTest extends Base {
     LoginPage loginPage;
     HomePage homePage;
     AboutusPage aboutusPage;
-      @Given("^Open the apllication URL$")
+      @Given("^Open the apllication URL-aboutus$")
         public void open_the_apllication_url() throws IOException  {
           driver = initializeBrowser();
            driver.get(prop.getProperty("url"));   
@@ -33,7 +28,7 @@ public class AboutusTest extends Base {
 
  
 
-        @When("^User enter valid userid and clicks on login button$")
+        @When("^User enter valid userid and clicks on login button-aboutus$")
         public void user_enter_valid_userid_and_clicks_on_login_button() throws InterruptedException  {
             loginPage.enterMobileNumber(prop.getProperty("mobilenumber")); 
             Thread.sleep(1000);
@@ -42,7 +37,7 @@ public class AboutusTest extends Base {
 
  
 
-        @When("^Home page is displayed and User clicks on Aboutus button$")
+        @When("^Home page is displayed and User clicks on Aboutus button-aboutus$")
         public void home_page_is_displayed_and_user_clicks_on_aboutus_button() throws InterruptedException  {
             homePage.clickOnDialog();
             homePage.clickOnCookie1();
@@ -51,7 +46,7 @@ public class AboutusTest extends Base {
 
  
 
-        @Then("^user can see the daily active members used the application$")
+        @Then("^user can see the daily active members used the application-aboutus$")
         public void user_can_see_the_daily_active_members_used_the_application()  {
             aboutusPage=homePage.clickOnAboutus();
             Assert.assertTrue(aboutusPage.activeMembers());
@@ -60,7 +55,7 @@ public class AboutusTest extends Base {
 
  
 
-        @And("^Navigate to login page$")
+        @And("^Navigate to login page-aboutus$")
         public void navigate_to_login_page()  {
             loginPage = new LoginPage(driver);
             loginPage.clickOnLoginHomePage();     
@@ -68,7 +63,7 @@ public class AboutusTest extends Base {
 
  
 
-        @And("^clicks on verify OTP$")
+        @And("^clicks on verify OTP-aboutus$")
         public void clicks_on_verify_otp() throws InterruptedException  {
             Thread.sleep(25000);
             homePage = loginPage.clickOnVerifyOTPButton(); 

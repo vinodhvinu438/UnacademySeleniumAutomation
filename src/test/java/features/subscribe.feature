@@ -1,5 +1,5 @@
 Feature: Subscription
-  @subscribe
+  @subscribe @all @gagan
   Scenario: Avail Subscription to a particular course
     Given Open the application URL
     And User performs login operation and Home page is displayed

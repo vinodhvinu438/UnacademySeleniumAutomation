@@ -108,4 +108,17 @@ public class HomePage
         addgoal.click();
         return new Choosegoalspage(driver);
     }
+    @FindBy(xpath="//img[@height=\"32px\"]") WebElement profile;
+    public void clickOnProfile()
+    {
+    	profile.click();
+    }
+    @FindBy(xpath="//a[@href=\"/settings\"]") WebElement settings;
+    public SettingsPage clickOnSettings() {
+    	WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//a[@href=\\\"/settings\\\"]")));
+    	settings.click();
+    	return new SettingsPage(driver);
+    }
+    
 }

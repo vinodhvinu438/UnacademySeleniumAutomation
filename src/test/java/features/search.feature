@@ -1,6 +1,6 @@
 Feature: UnacademyLogin Application
   
-  @login-search
+  @login-search @vishnu @all
   Scenario Outline: Login with valid phone number
     Given Open url of unacademy application-search
     Then Click on login option on homepage-search
@@ -32,4 +32,4 @@ Feature: UnacademyLogin Application
         
     Examples: 
       |mobilenumber |
-      |9398854781   |
+      |9618802723   |

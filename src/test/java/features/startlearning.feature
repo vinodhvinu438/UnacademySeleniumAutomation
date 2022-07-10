@@ -1,5 +1,5 @@
 Feature: Startlearning
-@Goal
+@nagasai @all
 Scenario: Explore startlearning feature
     Given Open the unacademy website
     And User does login process and home page is displayed

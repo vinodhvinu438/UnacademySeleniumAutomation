@@ -54,7 +54,7 @@ public class PageFactory1 {
     @FindBy(xpath="//h3[text()='No result found']")
     WebElement VerifyingWithInvalid;
     
-    @FindBy(xpath="(//h4[text()='Syllabus & Strategy for UPSC 2020'])[1]")
+    @FindBy(xpath="//h4[contains(.,'Showing results for \"Strategy UPSC 2020\"')]")
     WebElement VerifyCourseName;
     
     
@@ -122,7 +122,7 @@ public class PageFactory1 {
     }
     public void VerifyingCourseName()
     {
-        Assert.assertEquals(VerifyCourseName.getText(),"Syllabus & Strategy for UPSC 2020");
+        Assert.assertEquals(VerifyCourseName.getText(),"Showing results for \"Strategy UPSC 2020\"");
     }
     public void VerifyWithInvalidCourseName()
     {

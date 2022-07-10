@@ -1,6 +1,6 @@
 Feature: Registering Account
 
-@register
+@register @vinodh @all
 Scenario: Register with Mandatory fields
 Given Enter url of unacademy application
 Then click on login buuton on homepage

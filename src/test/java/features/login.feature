@@ -7,14 +7,14 @@ Background:
 Given Open url of unacademy application
 Then Click on login option on homepage
 
-@all @login
+@all @login @vinodh
 Scenario: Login with valid phone number
 And Enter registered mobile number
 Then click on login button
 And click on veifyotp button option
 Then  Verify user able to login successfully
  
-@all @email
+@all @email @vinodh
 Scenario Outline: Login with valid email
 And Click on Continue with email
 Then Enter registered "<Email>" email
@@ -25,7 +25,7 @@ Examples:
 |Email                   |
 |vinodhvinu438@gmail.com |
 
-@wrong @all
+@wrong @all @vinodh
 Scenario Outline: Login With invalid phone number
 When Enter wrong "<mobile number>"  mobile number
 And click on login button
@@ -34,7 +34,7 @@ Examples:
 |mobile number |
 |0000000000    |
 
-@wrong @all
+@wrong @all @vinodh
 Scenario Outline: Login with invalid Email
 And Click on Continue with email
 Then Enter wrong "<Email>" email
